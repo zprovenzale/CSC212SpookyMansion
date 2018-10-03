@@ -2,7 +2,10 @@
 
 SpookyMansion and other Interactive Fiction to explore using and understanding Graphs.
 
+## About TA Support:
+There are no TA hours this Sunday, Monday or Tuesday, so this assignment will be more on-your-own (with support primarily done via Piazza). However, we've been spending recent classes discussing Java vocabulary, so internet resources like StackOverflow are going to be more and more useful to you.
 
+## Learning Objectives
 The learning objectives of this assignment are:
  - To continue practicing using Maps with Java.
  - To gain an understanding of Graphs.
