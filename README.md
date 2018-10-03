@@ -57,32 +57,53 @@ This includes that your code should be professional.
  - Any methods or class-level variables left without a Javadoc comment (``/** */``) will result in the loss of a point.
  - Have comments explaining tricky code! (My video has my voice as a comment, so try to comment code you found tricky in it).
 
-## (Lab) Play SpookyMansion and Draw a "graph" for yourself (=10)
+## Lab Challenges
+
+### (Lab) Play SpookyMansion and Draw a "graph" for yourself (=10)
  - Import the starter code. (Don't forget the Maven step).
  - Play SpookyMansion, and sketch out the "game" on paper.
  - Finish the game by finding the "Crypt" place.
  - Include a scan (or clear cellphone photo) of your graph in your writeup.
  
-## (Lab) Get a handle on the SpookyMansion Code (=16)
+### (Lab) Get a handle on the SpookyMansion Code (=10)
  - Add an Exit from the ``secretRoom`` to the ``basement`` (but not in the other direction).
  - Make the very long hallway even longer.
  - Modify the very long hallway messages to include a number scratched on the wall, so that players can tell how far they've come.
  - Add another room in the Attic and off of the Basement.
  - Note on your "map" the changes you've made to the game's "Graph".
 
-## (Lab) Get a sense of the InteractiveFiction Code (=4)
+### (Lab) Get a sense of the InteractiveFiction Code (=4)
  - Find the code in ``InteractiveFiction`` that handles quitting the game.
  - Allow users to quit with the word "escape" or just the letter "q".
 
-## (Lab) Design your own version of FordHall (=20)
+### (Lab) Design your own version of FordHall (=20)
  - (8) Sketch out a graph of your FordHall game (include exits). Decide which room lets you "win".
      - Ford Hall has 3 floors, my office (256), our lab classroom (34?), and our lecture hall (240).
  - (12) create a FordHall class and implement your Places and Exits.
 
-## Implement SecretExit (=24)
+## Optional Challenges:
+
+### Implement SecretExit (=24)
  - (4) Create a class SecretExit that extends Exit.
  - (4) Put a method called "isSecret" on Exit that works for both classes.
  - (4) SecretExit should have a boolean hidden, that starts off as true.
  - (4) Make it so SecretExits are not printed to the user (in ``InteractiveFiction``) when hidden.
  - (4) When a user types "search", if there is a SecretExit in the room they are currently in, it should be made visible to them.
  - (4) Put a SecretExit from the ``basement`` to the ``secretRoom`` in SpookyMansion, so that the dumbwaiter is not the only solution to the game.
+ 
+### Implement Keys and LockedExit (=28 or 12 if you also do SecretExit)
+ - (4) Place must have a method that returns a list of items in a location (maybe just String?)
+ - (4) There must be an action to ``pick up`` or ``take`` an item.
+ - (4) Items are part of the description until they are taken from a Place.
+ - (4) The player can no longer be represented by just a location. They need to know what key(s) if any they have.
+ - (4 or 20) Implement a LockedExit that can only be chosen with the appropriate Key.
+ 
+### Implement a new game with some other tool or switch or idea (=?)
+ - Check with me to make sure it's not too hard :)
+
+### (Reading, Loops) Implement ``chooseFromList`` on TextInput (=16)
+  - This one will be very difficult if you don't know how to test it. I suggest putting a ``main`` into ``TextInput`` and trying it separate from the games first.
+  - Read how "confirm" works. You can move my word-matching code from ``InteractiveFiction`` into this method.
+  - (8) It should take a ``List<String>`` and return an int.
+  - (4) Use it for selecting exits. (Make a List<Exit> into a List<String>, then find the index).
+  - (4) Use it for selecting from your games [FordHall, SpookyMansion] etc.
