@@ -1,4 +1,4 @@
-# CSC212P4
+# CSC212P4 (Lab & Option for P5)
 
 SpookyMansion and other Interactive Fiction to explore using and understanding Graphs.
 
@@ -25,11 +25,35 @@ It's big up here.
 > 
 ```
 
- ***Due Date***: October 11, 2018.
+# Lab Challenges
 
-Remember that we will have P5 opening on that day, so don't save it until the last minute!
+## (Lab) Play SpookyMansion and Draw a "graph" for yourself
+ - Import the starter code. (Don't forget the Maven step).
+ - Play SpookyMansion, and sketch out the "game" on paper.
+ - Finish the game by finding the "Crypt" place.
+ - Include a scan (or clear cellphone photo) of your graph in your writeup.
+ 
+## (Lab) Get a handle on the SpookyMansion Code
+ - Add an Exit from the ``secretRoom`` to the ``basement`` (but not in the other direction).
+ - Make the very long hallway even longer.
+ - Modify the very long hallway messages to include a number scratched on the wall, so that players can tell how far they've come.
+ - Add another room in the Attic and off of the Basement.
+ - Note on your "map" the changes you've made to the game's "Graph".
 
-# Rubric
+## (Lab) Get a sense of the InteractiveFiction Code
+ - Find the code in ``InteractiveFiction`` that handles quitting the game.
+ - Allow users to quit with the word "escape" or just the letter "q".
+
+## (Lab) Design your own version of FordHall
+ - (8) Sketch out a graph of your FordHall game (include exits). Decide which room lets you "win".
+     - Ford Hall has 3 floors, my office (256), our lab classroom (34?), and our lecture hall (240).
+ - (12) create a FordHall class and implement your Places and Exits.
+
+# Challenges for P5:
+
+Remember that P5 will be due ***Due Date***: October 18, 2018.
+
+Remember that we will have the Midterm opening on that day, so don't save it until the last minute!
 
 ## Reflection (=20)
 
@@ -60,31 +84,14 @@ This includes that your code should be professional.
  - Any methods or class-level variables left without a Javadoc comment (``/** */``) will result in the loss of a point.
  - Have comments explaining tricky code! (My video has my voice as a comment, so try to comment code you found tricky in it).
 
-## Lab Challenges
+## Optional Suggested Challenges
 
-### (Lab) Play SpookyMansion and Draw a "graph" for yourself (=10)
- - Import the starter code. (Don't forget the Maven step).
- - Play SpookyMansion, and sketch out the "game" on paper.
- - Finish the game by finding the "Crypt" place.
- - Include a scan (or clear cellphone photo) of your graph in your writeup.
- 
-### (Lab) Get a handle on the SpookyMansion Code (=10)
- - Add an Exit from the ``secretRoom`` to the ``basement`` (but not in the other direction).
- - Make the very long hallway even longer.
- - Modify the very long hallway messages to include a number scratched on the wall, so that players can tell how far they've come.
- - Add another room in the Attic and off of the Basement.
- - Note on your "map" the changes you've made to the game's "Graph".
-
-### (Lab) Get a sense of the InteractiveFiction Code (=4)
- - Find the code in ``InteractiveFiction`` that handles quitting the game.
- - Allow users to quit with the word "escape" or just the letter "q".
-
-### (Lab) Design your own version of FordHall (=20)
- - (8) Sketch out a graph of your FordHall game (include exits). Decide which room lets you "win".
-     - Ford Hall has 3 floors, my office (256), our lab classroom (34?), and our lecture hall (240).
- - (12) create a FordHall class and implement your Places and Exits.
-
-## Optional Challenges:
+### Implement Your Own Game (=24+?)
+ - (8) Must have at least 8 Places.
+ - (8) Must have at least 8 functional Exits.
+ - (4) Must have a terminal place (a way to win the game).
+ - (4) Have some one-way paths (the staircase collapses behind you)
+ - Be creative?
 
 ### Implement SecretExit (=24)
  - (4) Create a class SecretExit that extends Exit.
