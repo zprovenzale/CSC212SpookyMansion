@@ -111,7 +111,7 @@ This includes that your code should be professional.
 ### Implement a new game with some other tool or switch or idea (=?)
  - Check with me to make sure it's not too hard :)
 
-### (Reading, Loops) Implement ``chooseFromList`` on TextInput (=24..32)
+### (Reading, Loops) Implement ``chooseFromList`` on TextInput (=24..40)
   - This one will be very difficult if you don't know how to test it. I suggest putting a ``main`` into ``TextInput`` and trying it separate from the games first.
   - Read how "confirm" works. You can move my word-matching code from ``InteractiveFiction`` into this method.
   - (8) It should take a ``List<String>`` and return an int.
@@ -120,4 +120,5 @@ This includes that your code should be professional.
   - (8) It should be possible for a user to quit while selecting from a list. Return -1 from this method on quit, and use this "-1" output special in ``InteractiveFiction``.
   - (0,4,8) If you have done SecretExit or Keys, you will need more "special" return values from this method for those actions. Try using -2 for "search" and -3 for "take".
   - (4) Use it for selecting exits. (Copy descriptions from a ``List<Exit>`` into a ``List<String>``, then find the index).
+  - (0,8) If you've done SecretExit, you will need to copy from a ``List<Exit>`` into a ``List<Exit`` for the visible ones, and then to a ``List<String>`` if you're trying to keep indexes the same. Or, make a ``Map<Integer, Exit>`` at the same time as making a ``List<String>``.
   - (4) Use it for selecting from your games ``[FordHall, SpookyMansion]`` etc.
