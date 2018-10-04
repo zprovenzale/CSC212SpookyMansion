@@ -117,6 +117,6 @@ This includes that your code should be professional.
   - (8) It should take a ``List<String>`` and return an int.
       - My word-matching code works over ``List<Exit>``. Change Exit objects to Strings in this method.
       - Try using ``input.indexOf(choice)`` if you have a String and want to return the index.
-  - (6) It should be possible for a user to quit while selecting from a list. Return -1 from this method on quit, and use this "-1" output special in ``InteractiveFiction``.
+  - (8) It should be possible for a user to quit while selecting from a list. Return -1 from this method on quit, and use this "-1" output special in ``InteractiveFiction``.
   - (4) Use it for selecting exits. (Copy descriptions from a ``List<Exit>`` into a ``List<String>``, then find the index).
   - (4) Use it for selecting from your games ``[FordHall, SpookyMansion]`` etc.
