@@ -115,5 +115,5 @@ This includes that your code should be professional.
   - This one will be very difficult if you don't know how to test it. I suggest putting a ``main`` into ``TextInput`` and trying it separate from the games first.
   - Read how "confirm" works. You can move my word-matching code from ``InteractiveFiction`` into this method.
   - (8) It should take a ``List<String>`` and return an int.
-  - (4) Use it for selecting exits. (Make a List<Exit> into a List<String>, then find the index).
+  - (4) Use it for selecting exits. (Make a ``List<Exit>`` into a ``List<String>``, then find the index).
   - (4) Use it for selecting from your games [FordHall, SpookyMansion] etc.
