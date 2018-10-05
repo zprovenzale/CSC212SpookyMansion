@@ -116,7 +116,8 @@ This includes that your code should be professional.
  - (4) Extend the game's concept of a player with a current time.
  - (4) Increment the hour every time the player moves. Print out the current time after a room description.
  - (4) Tell the player how many hours they spent in your game upon GameOver.
-#### Implement Different Place Descriptions for Day and Night (=16)
+#### Implement Different Place Descriptions for Day and Night (=20)
+ - (4) Make an action ``rest`` that advances the game 2 hours so that you can test your descriptions.
  - (4) Implement a boolean method called ``isNightTime()``
  - (4) Add GameTime as a parameter to the ``getDescription`` method on ``Place``.
  - (8) Create some places with descriptions based whether GameTime ``isNightTime()`` -- have a new ``nightDescription`` field be ``null`` by default.
