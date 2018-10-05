@@ -119,7 +119,7 @@ This includes that your code should be professional.
 #### Implement Different Place Descriptions for Day and Night (=16)
  - (4) Implement a boolean method called ``isNightTime()``
  - (4) Add GameTime as a parameter to the ``getDescription`` method on ``Place``.
- - (8) Create a subclass of Place that has different descriptions based whether GameTime ``isNightTime()``
+ - (8) Create some places with descriptions based whether GameTime ``isNightTime()`` -- have a new ``nightDescription`` field be ``null`` by default.
 #### Implement NightExit and DayExit that are only available at a particular time. (=12)
  - (12) Challenge: I'm not breaking this down, shares some work with ``SecretExit``.
  
