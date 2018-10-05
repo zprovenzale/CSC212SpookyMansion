@@ -89,7 +89,7 @@ This includes that your code should be professional.
  - (4) Have some one-way paths (the staircase collapses behind you)
  - Be creative?
 
-## Design your own version of Ford Hall? (same as above, for the less creative amongst us).
+#### Design your own version of Ford Hall? (same as above, for the less creative amongst us).
  - (8) Sketch out a graph of your FordHall game (include exits). Decide which room lets you "win".
      - Ford Hall has 3 floors, my office (256), our lab classroom (34?), and our lecture hall (240).
  - (12) create a FordHall class and implement your Places and Exits.
