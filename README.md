@@ -103,11 +103,12 @@ This includes that your code should be professional.
  - (4) When a user types "search", if there is a SecretExit in the room they are currently in, it should be made visible to them.
  - (4) Put a SecretExit from the ``basement`` to the ``secretRoom`` in SpookyMansion, so that the dumbwaiter is not the only solution to the game.
  
-### Implement Keys and LockedExit (=28 or 12 if you also do SecretExit)
+### Implement Keys and LockedExit (=32 or 16 if you also do SecretExit)
  - (4) Place must have a method that returns a list of items in a location (maybe just String?)
  - (4) There must be an action to ``pick up`` or ``take`` an item.
  - (4) Items are part of the description until they are taken from a Place.
  - (4) The player can no longer be represented by just a location. They need to know what key(s) if any they have.
+ - (4) Make a ``stuff`` command that prints out the users items or "You have nothing."
  - (4 or 20) Implement a LockedExit that can only be chosen with the appropriate Key.
  
 ### Create a time system in your game. (=20)
