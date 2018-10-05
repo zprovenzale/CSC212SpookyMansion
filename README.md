@@ -110,17 +110,21 @@ This includes that your code should be professional.
  - (4) The player can no longer be represented by just a location. They need to know what key(s) if any they have.
  - (4 or 20) Implement a LockedExit that can only be chosen with the appropriate Key.
  
+### Create a time system in your game. (=20)
+ - (8) Create a class GameTime, that has an int as state, ranging from 0 to 23 (inclusive).
+ - (4) Extend the game's concept of a player with a current time.
+ - (4) Increment the hour every time the player moves. Print out the current time after a room description.
+ - (4) Tell the player how many hours they spent in your game upon GameOver.
+#### Implement Different Place Descriptions for Day and Night (=16)
+ - (4) Implement a boolean method called ``isNightTime()``
+ - (4) Add GameTime as a parameter to the ``getDescription`` method on ``Place``.
+ - (8) Create a subclass of Place that has different descriptions based whether GameTime ``isNightTime()``
+#### Implement NightExit and DayExit that are only available at a particular time. (=12)
+ - (12) Challenge: I'm not breaking this down, shares some work with ``SecretExit``.
+ 
 ### Implement a new game with some other tool or switch or idea (=?)
  - Check with me to make sure it's not too hard :)
 
-### (Reading, Loops) Implement ``chooseFromList`` on TextInput (=24..40)
-  - This one will be very difficult if you don't know how to test it. I suggest putting a ``main`` into ``TextInput`` and trying it separate from the games first.
-  - Read how "confirm" works. You can move my word-matching code from ``InteractiveFiction`` into this method.
-  - (8) It should take a ``List<String>`` and return an int.
-      - My word-matching code works over ``List<Exit>``. Change Exit objects to Strings in this method.
-      - Try using ``input.indexOf(choice)`` if you have a String and want to return the index.
-  - (8) It should be possible for a user to quit while selecting from a list. Return -1 from this method on quit, and use this "-1" output special in ``InteractiveFiction``.
-  - (0,4,8) If you have done SecretExit or Keys, you will need more "special" return values from this method for those actions. Try using -2 for "search" and -3 for "take".
-  - (4) Use it for selecting exits. (Copy descriptions from a ``List<Exit>`` into a ``List<String>``, then find the index).
-  - (0,8) If you've done SecretExit, you will need to copy from a ``List<Exit>`` into a ``List<Exit`` for the visible ones, and then to a ``List<String>`` if you're trying to keep indexes the same. Or, make a ``Map<Integer, Exit>`` at the same time as making a ``List<String>``.
-  - (4) Use it for selecting from your games ``[FordHall, SpookyMansion]`` etc.
+
+### Where did chooseFromList go?
+It turned out to be way too hard in conjunction with other options. Sorry. I'm deleting it.
