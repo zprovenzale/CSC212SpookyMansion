@@ -1,6 +1,5 @@
 package edu.smith.cs.csc212.p4;
 
-import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -38,49 +37,51 @@ public class InteractiveFiction {
 			}
 
 			// Show a user the ways out of this place.
-			List<Exit> exits = here.getExits();
-			for (Exit e : exits) {
-				System.out.println(" - " + e.getDescription());
+			List<Exit> exits = here.getVisibleExits();
+			
+			for (int i=0; i<exits.size(); i++) {
+			    Exit e = exits.get(i);
+				System.out.println(" ["+i+"] " + e.getDescription());
 			}
 
 			// Figure out what the user wants to do, for now, only "quit" is special.
-			List<String> action = input.getUserWords(">");
-			if (action.contains("quit")) {
+			List<String> words = input.getUserWords(">");
+			if (words.size() == 0) {
+				System.out.println("Must type something!");
+				continue;
+			} else if (words.size() > 1) {
+				System.out.println("Only give me 1 word at a time!");
+				continue;
+			}
+			
+			// Get the word they typed as lowercase, and no spaces.
+			String action = words.get(0).toLowerCase().trim();
+			
+			if (action.equals("quit")) {
 				if (input.confirm("Are you sure you want to quit?")) {
 					break;
 				} else {
 					continue;
 				}
 			}
-
-			// See if what the user typed matches any exits.
-			HashSet<Exit> matches = new HashSet<>();
-			for (Exit e : exits) {
-				List<String> keywords = WordSplitter.splitTextToWords(e.getDescription());
-				for (String a : action) {
-					if (keywords.contains(a)) {
-						matches.add(e);
-						break;
-					}
-				}
+			
+			// From here on out, what they typed better be a number!
+			Integer exitNum = null;
+			try {
+				exitNum = Integer.parseInt(action);
+			} catch (NumberFormatException nfe) {
+				System.out.println("That's not something I understand! Try a number!");
+				continue;
 			}
 			
-			// If they typed a unique word, they want to go there.
-			if (matches.size() == 1) {
-				Exit e = matches.iterator().next();
-				place = e.getTarget();
+			if (exitNum < 0 || exitNum > exits.size()) {
+				System.out.println("I don't know what to do with that number!");
 				continue;
-			} else if (matches.size() >= 2) {
-				// If not, express our confusion.
-				System.out.println("I can't tell which you mean:");
-				for (Exit e : matches) {
-					System.out.println(" - " + e.getDescription());
-				}
-				continue;
-			} else {
-				// If there were no matches at all.
-				System.out.println("I'm not sure what you mean by: " + action);
 			}
+
+			// Move to the room they indicated.
+			Exit destination = exits.get(exitNum);
+			place = destination.getTarget();
 		}
 
 		// You get here by "quit" or by reaching a Terminal Place.

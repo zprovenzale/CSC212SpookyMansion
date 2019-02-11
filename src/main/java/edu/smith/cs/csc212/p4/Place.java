@@ -76,7 +76,7 @@ public class Place {
 	 * Get a view of the exits from this Place, for navigation.
 	 * @return all the exits from this place.
 	 */
-	public List<Exit> getExits() {
+	public List<Exit> getVisibleExits() {
 		return Collections.unmodifiableList(exits);
 	}
 	

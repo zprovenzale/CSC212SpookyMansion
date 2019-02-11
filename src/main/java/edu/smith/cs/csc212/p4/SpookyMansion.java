@@ -102,7 +102,7 @@ public class SpookyMansion implements GameWorld {
 		// For every place:
 		for (Place p : places.values()) {
 			// For every exit from that place:
-			for (Exit x : p.getExits()) {
+			for (Exit x : p.getVisibleExits()) {
 				// That exit goes to somewhere that exists!
 				if (!places.containsKey(x.getTarget())) {
 					// Don't leave immediately, but check everything all at once.
