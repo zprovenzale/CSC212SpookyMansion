@@ -29,7 +29,7 @@ public class SpookyMansion implements GameWorld {
 		entranceHall.addExit(new Exit("basement", "There are stairs leading down."));
 		entranceHall.addExit(new Exit("attic", "There are stairs leading up."));
 		entranceHall.addExit(new Exit("kitchen", "There is a red door."));
-		
+				
 		Place basement = insert(
 				Place.create("basement", "You have found the basement of the mansion.\n" + 
 		                           "It is darker down here.\n" +
@@ -40,11 +40,11 @@ public class SpookyMansion implements GameWorld {
 		Place attic = insert(Place.create("attic",
 				"Something rustles in the rafters as you enter the attic. Creepy.\n" + "It's big up here."));
 		attic.addExit(new Exit("entranceHall", "There are stairs leading down."));
-		attic.addExit(new Exit("attic2", "There is more through an archway"));
+		attic.addExit(new Exit("attic2", "There is more through an archway."));
 
 		Place attic2 = insert(Place.create("attic2", "There's definitely a bat in here somewhere.\n"
 				+ "This part of the attic is brighter, so maybe you're safe here."));
-		attic2.addExit(new Exit("attic", "There is more back through the archway"));
+		attic2.addExit(new Exit("attic", "There is more back through the archway."));
 		
 		Place kitchen = insert(Place.create("kitchen", "You've found the kitchen. You smell old food and some kind of animal."));
 		kitchen.addExit(new Exit("entranceHall", "There is a red door."));

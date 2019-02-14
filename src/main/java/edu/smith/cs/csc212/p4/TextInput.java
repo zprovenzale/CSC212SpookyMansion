@@ -55,7 +55,7 @@ public class TextInput {
 	 * Get the parsed-out words from the user.
 	 * 
 	 * @param prompt - what to print before asking the user.
-	 * @return
+	 * @return what the user typed.
 	 */
 	public List<String> getUserWords(String prompt) {
 		while (true) {
