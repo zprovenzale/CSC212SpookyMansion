@@ -1,4 +1,4 @@
-package edu.smith.cs.csc212.p4;
+package edu.smith.cs.csc212.spooky;
 
 import java.util.List;
 
@@ -10,16 +10,12 @@ import java.util.List;
 public class InteractiveFiction {
 
 	/**
-	 * This is where we play the game.
-	 * @param args
+	 * This method actually plays the game.
+	 * @param input - a helper object to ask the user questions.
+	 * @param game - the places and exits that make up the game we're playing.
+	 * @return where - the place the player finished.
 	 */
-	public static void main(String[] args) {
-		// This is a text input source (provides getUserWords() and confirm()).
-		TextInput input = TextInput.fromArgs(args);
-
-		// This is the game we're playing.
-		GameWorld game = new SpookyMansion();
-		
+	static String runGame(TextInput input, GameWorld game) {
 		// This is the current location of the player (initialize as start).
 		// Maybe we'll expand this to a Player object.
 		String place = game.getStart();
@@ -38,9 +34,9 @@ public class InteractiveFiction {
 
 			// Show a user the ways out of this place.
 			List<Exit> exits = here.getVisibleExits();
-			
+
 			for (int i=0; i<exits.size(); i++) {
-			    Exit e = exits.get(i);
+				Exit e = exits.get(i);
 				System.out.println(" ["+i+"] " + e.getDescription());
 			}
 
@@ -53,18 +49,18 @@ public class InteractiveFiction {
 				System.out.println("Only give me 1 word at a time!");
 				continue;
 			}
-			
+
 			// Get the word they typed as lowercase, and no spaces.
 			String action = words.get(0).toLowerCase().trim();
-			
+
 			if (action.equals("quit")) {
 				if (input.confirm("Are you sure you want to quit?")) {
-					break;
+					return place;
 				} else {
 					continue;
 				}
 			}
-			
+
 			// From here on out, what they typed better be a number!
 			Integer exitNum = null;
 			try {
@@ -73,7 +69,7 @@ public class InteractiveFiction {
 				System.out.println("That's not something I understand! Try a number!");
 				continue;
 			}
-			
+
 			if (exitNum < 0 || exitNum > exits.size()) {
 				System.out.println("I don't know what to do with that number!");
 				continue;
@@ -84,7 +80,24 @@ public class InteractiveFiction {
 			place = destination.getTarget();
 		}
 
-		// You get here by "quit" or by reaching a Terminal Place.
+		return place;
+	}
+
+	/**
+	 * This is where we play the game.
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// This is a text input source (provides getUserWords() and confirm()).
+		TextInput input = TextInput.fromArgs(args);
+
+		// This is the game we're playing.
+		GameWorld game = new SpookyMansion();
+
+		// Actually play the game.
+		runGame(input, game);
+
+		// You get here by typing "quit" or by reaching a Terminal Place.
 		System.out.println(">>> GAME OVER <<<");
 	}
 

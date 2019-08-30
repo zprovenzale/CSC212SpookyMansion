@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>edu.smith.cs.csc212</groupId>
-  <artifactId>P4</artifactId>
+  <artifactId>SpookyMansion</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <properties>
@@ -45,7 +45,7 @@
               <classpathPrefix>lib/</classpathPrefix>
               <addClasspath>true</addClasspath>
               <useUniqueVersions>false</useUniqueVersions>
-              <mainClass>edu.smith.cs.csc212.p4.InteractiveFiction</mainClass>
+              <mainClass>edu.smith.cs.csc212.spooky.InteractiveFiction</mainClass>
             </manifest>
           </archive>
         </configuration>
