@@ -3,7 +3,10 @@ package edu.smith.cs.csc212.spooky;
 import java.util.List;
 
 /**
- * This is our main class for P4. It interacts with a GameWorld and handles user-input.
+ * This is our main class for SpookyMansion.
+ * It interacts with a GameWorld and handles user-input.
+ * It can play any game, really.
+ *
  * @author jfoley
  *
  */

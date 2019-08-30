@@ -1,4 +1,4 @@
-# CSC212P4 SpookyMansion
+# CSC212 SpookyMansion
 
 SpookyMansion and other Interactive Fiction to explore using and understanding Graphs.
 
@@ -43,11 +43,11 @@ It's big up here.
  - Allow users to quit with the word "escape" or just the letter "q". (They will still need to press enter).
 
 
-# Challenges for P4:
+# Challenges:
 
-Remember that P4 will be due ***Due Date***: February 21, 2018.
+Remember that SpookyMansion will be due ***Due Date***: February 21, 2018.
 
-Remember that we will have P5 opening on that day, so don't save it until the last minute!
+Remember that we will have a new assignment opening on that day, so don't save it until the last minute!
 
 ### Rubric and Reflection (=15)
 
