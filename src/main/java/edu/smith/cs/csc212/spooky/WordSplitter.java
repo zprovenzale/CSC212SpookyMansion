@@ -38,15 +38,4 @@ public class WordSplitter {
 		
 		return words;
 	}
-	
-	/**
-	 * See the difference by running this.
-	 * @param args - none.
-	 */
-	public static void main(String[] args) {
-		String testData = "This is a sentence with punctuation."
-				+ "There shouldn't be much here.";
-		System.out.println("words: " + splitTextToWords(testData));
-	}
-
 }
