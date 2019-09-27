@@ -25,7 +25,7 @@ You've found the kitchen. You smell old food and some kind of animal.
 ? 
 ```
 
-# Lab Challenges (=16)
+# Lab Challenges (=15)
 
 ## (Lab) Play SpookyMansion and Draw a "graph" for yourself
  - Import the starter code. (Don't forget the Maven step).
@@ -44,15 +44,16 @@ You've found the kitchen. You smell old food and some kind of animal.
 ## (Lab) Get a sense of the InteractiveFiction Code
  - Find the code in ``InteractiveFiction`` that handles quitting the game.
 
-### Add actions to the game (=8)
- - (4) Allow users to quit with the word "escape" or just the letter "q". (They will still need to press enter).
- - (4) Add a "help" command that explains to type in the number of the room as well as how to quit.
+### Add actions to the game (=6)
+ - (3) Allow users to quit with the word "escape" or just the letter "q". (They will still need to press enter).
+ - (3) Add a "help" command that explains to type in the number of the room as well as how to quit.
  - You will need ``continue`` OR ``break`` statements!
 
-### "This place feels familiar..." (=8)
+### "This place feels familiar..." (=9)
 When you visit a place for the second time, print out a message indicating to the player that they have been to that place before. This will not carry over between games.
-- (4) Add a "boolean visited" flag onto the Place class.
-- (4) Update this flag from ``false`` to ``true`` within ``InteractiveFiction``.
+- (3) Add a "boolean visited" flag onto the Place class.
+- (3) Update this flag from ``false`` to ``true`` within a ``visit()`` method.
+- (3) Call this method from ``InteractiveFiction``.
 
 # Challenges:
 
