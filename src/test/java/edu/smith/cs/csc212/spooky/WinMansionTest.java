@@ -7,7 +7,7 @@ public class WinMansionTest {
     @Test
     public void testWinSequence() {
         TextInput fake = new TextInput(new String[] {
-           "2", "1", "0", "0", "1", "1", "1"
+           "2", "1", "0", "1", "1", "1", "1"
         });
 
         String end = InteractiveFiction.runGame(fake, new SpookyMansion());

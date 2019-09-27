@@ -44,7 +44,7 @@ public class Exit {
 	}
 	
 	/**
-	 * Make this debuggable when we print it for ourselves.
+	 * Make this debug-able when we print it for ourselves.
 	 */
 	public String toString() {
 		return "Exit("+this.description+", "+this.target+")";

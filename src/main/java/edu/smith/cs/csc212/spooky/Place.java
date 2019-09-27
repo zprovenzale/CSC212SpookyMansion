@@ -33,7 +33,7 @@ public class Place {
 	 * @param description - the user-facing description of the place.
 	 * @param terminal - whether this place ends the game.
 	 */
-	private Place(String id, String description, boolean terminal) {
+	protected Place(String id, String description, boolean terminal) {
 		this.id = id;
 		this.description = description;
 		this.exits = new ArrayList<>();
@@ -77,7 +77,11 @@ public class Place {
 	 * @return all the exits from this place.
 	 */
 	public List<Exit> getVisibleExits() {
-		return Collections.unmodifiableList(exits);
+		List<Exit> visible = new ArrayList<>();
+		for (Exit e : this.exits) {
+			visible.add(e);
+		}
+		return visible;
 	}
 	
 	/**

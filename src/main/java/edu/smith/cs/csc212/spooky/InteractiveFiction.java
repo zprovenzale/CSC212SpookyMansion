@@ -28,6 +28,9 @@ public class InteractiveFiction {
 		while (true) {
 			// Print the description of where you are.
 			Place here = game.getPlace(place);
+			
+			System.out.println();
+			System.out.println("... --- ...");
 			System.out.println(here.getDescription());
 
 			// Game over after print!
@@ -40,20 +43,18 @@ public class InteractiveFiction {
 
 			for (int i=0; i<exits.size(); i++) {
 				Exit e = exits.get(i);
-				System.out.println(" ["+i+"] " + e.getDescription());
+				System.out.println(" "+i+". " + e.getDescription());
 			}
 
 			// Figure out what the user wants to do, for now, only "quit" is special.
-			List<String> words = input.getUserWords(">");
-			if (words.size() == 0) {
-				System.out.println("Must type something!");
-				continue;
-			} else if (words.size() > 1) {
-				System.out.println("Only give me 1 word at a time!");
+			List<String> words = input.getUserWords("?");
+			if (words.size() > 1) {
+				System.out.println("Only give the system 1 word at a time!");
 				continue;
 			}
 
 			// Get the word they typed as lowercase, and no spaces.
+			// Do not uppercase action -- I have lowercased it.
 			String action = words.get(0).toLowerCase().trim();
 
 			if (action.equals("quit")) {
@@ -73,7 +74,7 @@ public class InteractiveFiction {
 				continue;
 			}
 
-			if (exitNum < 0 || exitNum > exits.size()) {
+			if (exitNum < 0 || exitNum >= exits.size()) {
 				System.out.println("I don't know what to do with that number!");
 				continue;
 			}
@@ -101,7 +102,7 @@ public class InteractiveFiction {
 		runGame(input, game);
 
 		// You get here by typing "quit" or by reaching a Terminal Place.
-		System.out.println(">>> GAME OVER <<<");
+		System.out.println("\n\n>>> GAME OVER <<<");
 	}
 
 }
