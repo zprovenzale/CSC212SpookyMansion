@@ -63,7 +63,7 @@ Remember that we will have a new assignment opening on that day, so don't save i
 
 ### Rubric and Reflection (=15)
 
-You must complete a Google Form (coming soon) as usual to indicate your expected grade. 
+You must complete a [Google Form as usual to indicate the challenges you attempted and completed](https://forms.gle/XBC87k7EqYLYe4xc8). 
 
 In addition, you will write 10 statements of either:
  - Accomplishments: things that you understand much better now.
