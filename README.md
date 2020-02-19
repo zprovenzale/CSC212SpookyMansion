@@ -62,7 +62,7 @@ Remember that we will have a new assignment opening on the next day, so don't sa
 
 ### Rubric and Reflection (=15)
 
-You must complete a [Google Form as usual to indicate the challenges you attempted and completed](https://forms.gle/XBC87k7EqYLYe4xc8). 
+You must complete a [Google Form as usual to indicate the challenges you attempted and completed](https://forms.gle/TWj6Hpne4dBqRPcS7). 
 
 In addition, you will write 10 statements of either:
  - Accomplishments: things that you understand much better now.
