@@ -20,14 +20,13 @@ public class InteractiveFiction {
 	 */
 	static String runGame(TextInput input, GameWorld game) {
 		// This is the current location of the player (initialize as start).
-		// Maybe we'll expand this to a Player object.
-		String place = game.getStart();
+		Player player = new Player(game.getStart());
 
 		// Play the game until quitting.
 		// This is too hard to express here, so we just use an infinite loop with breaks.
 		while (true) {
 			// Print the description of where you are.
-			Place here = game.getPlace(place);
+			Place here = game.getPlace(player.getPlace());
 			
 			System.out.println();
 			System.out.println("... --- ...");
@@ -59,8 +58,10 @@ public class InteractiveFiction {
 
 			if (action.equals("quit")) {
 				if (input.confirm("Are you sure you want to quit?")) {
-					return place;
+					// quit!
+					break;
 				} else {
+					// go to the top of the game loop!
 					continue;
 				}
 			}
@@ -81,10 +82,14 @@ public class InteractiveFiction {
 
 			// Move to the room they indicated.
 			Exit destination = exits.get(exitNum);
-			place = destination.getTarget();
+			if (destination.canOpen(player)) {
+				player.moveTo(destination.getTarget());
+			} else {
+				// TODO: some kind of message about it being locked?
+			}
 		}
 
-		return place;
+		return player.getPlace();
 	}
 
 	/**

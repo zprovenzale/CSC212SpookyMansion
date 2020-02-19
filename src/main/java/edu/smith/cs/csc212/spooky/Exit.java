@@ -76,4 +76,31 @@ public class Exit {
 		}
 		return false;
 	}
+	
+	/**
+	 * This is not a secret exit in any way, but a subclass of exit might be!
+	 * @return always false for a regular exit!
+	 */
+	public boolean isSecret() {
+		// DO NOT CHANGE THIS METHOD. ONLY OVERRIDE IN A SUBCLASS.
+		return false;
+	}
+	
+	/**
+	 * What changes about this Exit if a player searches it thoroughly? Nothing here.
+	 */
+	public void search() {
+		// DO NOT CHANGE THIS METHOD. ONLY OVERRIDE IN A SUBCLASS.
+		// Does nothing.
+	}
+	
+	/**
+	 * Can the player open this door?
+	 * @param player - the player object (and all other state)
+	 * @return true if that is OK, false if they need something special.
+	 */
+	public boolean canOpen(Player player) {
+		// DO NOT CHANGE THIS METHOD. ONLY OVERRIDE IN A SUBCLASS.
+		return true;
+	}
 }
