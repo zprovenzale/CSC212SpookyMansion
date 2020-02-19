@@ -4,9 +4,9 @@ SpookyMansion and other Interactive Fiction to explore using and understanding G
 
 ## Learning Objectives
 The learning objectives of this assignment are:
- - To practice using Maps with Java.
- - To gain an understanding of Graphs.
- 
+ - To practice using Maps/Sets with Java.
+ - To gain a some understanding of Graphs.
+ - To reinforce inheritance / overriding methods as a way of solving problems.
 
 ```
 ... --- ...
@@ -49,17 +49,16 @@ You've found the kitchen. You smell old food and some kind of animal.
  - (3) Add a "help" command that explains to type in the number of the room as well as how to quit.
  - You will need ``continue`` OR ``break`` statements!
 
-### "This place feels familiar..." (=9)
+### "This place feels familiar..." (=6)
 When you visit a place for the second time, print out a message indicating to the player that they have been to that place before. This will not carry over between games.
-- (3) Add a "boolean visited" flag onto the Place class.
-- (3) Update this flag from ``false`` to ``true`` within a ``visit()`` method.
-- (3) Call this method from ``InteractiveFiction``.
+- (3) Add a ``Set<String> visited`` onto the ``Player`` class.
+- (3) Update this flag from ``false`` to ``true`` within an appropriate method.
 
 # Challenges:
 
-Remember that SpookyMansion will be due ***Due Date***: October 4, 2019.
+Remember that SpookyMansion will be due ***Due Date***: February 27, 2019.
 
-Remember that we will have a new assignment opening on that day, so don't save it until the last minute!
+Remember that we will have a new assignment opening on the next day, so don't save it until the last minute!
 
 ### Rubric and Reflection (=15)
 
@@ -93,13 +92,13 @@ Consider building a spooky version of FordHall.
  - (4) Must have a terminal place (a way to win the game).
  - Be creative?
 
-### Implement SecretExit (=24)
+### Implement SecretExit (=20)
 What does this look like? Consider this example: [SecretExit.md](SecretExit.md)
  - (4) Create a class SecretExit that extends Exit.
- - (4) Put a method called "boolean isSecret()" on Exit that works for both classes. Exits are never secret, but SecretExits are until you ``search`` for them.
+ - (4) Override the method called ``boolean isSecret()``. Exits are never secret, but SecretExits are until you ``search`` for them.
  - (4) SecretExit should have a private boolean hidden, that starts off as true.
- - (4) Make it so SecretExits are not printed to the user (in ``InteractiveFiction``) when hidden. Change ``Place.getVisibleExits()`` to return only the exits that are not secret.
- - (4) When a user types ``search``, if there is a SecretExit in the room they are currently in, it should be made visible to them. Make a ``void search()`` method on ``Exit`` and ``SecretExit`` that does nothing to ``Exit`` but reveals the ``SecretExit``.
+ - (4) When a user types ``search``, if there is a SecretExit in the room they are currently in, it should be made visible to them. Make a ``void search()`` method on ``Place`` that calls ``search()`` on all of its exits.
+ - (4) Override ``void search()`` on ``SecretExit`` so that it becomes no-longer-secret when called. 
  - (4) Put a SecretExit from the ``basement`` to the ``secretRoom`` in SpookyMansion OR put a SecretExit in your custom game.
  
 ### Implement Stuff (=20)
@@ -107,12 +106,12 @@ What does this look like? Consider part of this example: [LockedExit.md](LockedE
  - (4) The player can no longer be represented by just a location. They need to know what key(s) if any they have.
  - (4) Make a ``stuff`` command that prints out the users items or "You have nothing."
  - (4) Place must have a method that returns a list of items in a location (maybe just ``List<String>``; don't need an item class)
- - (4) There must be an action to ``take`` an item.
+ - (4) There must be an action to ``take`` any items associated with the location (just take all of them, no menu needed!).
  - (4) Items are part of the description until they are taken from a ``Place``. See the ``getDescription`` method. It might be easier to create a new ``void printDescription()``
  
 ### LockedExit / Requires Stuff: (=4..20 points; very similar to SecretExit)
 What does this look like? Consider this example: [LockedExit.md](LockedExit.md)
- - (4 or 20) Implement a ``LockedExit`` that can only be chosen with the appropriate Key.
+ - (4 or 20) Implement a ``LockedExit`` that can only be chosen with the appropriate Key: hint: ``canOpen`` is nearly complete for you.
  
 ### Create a time system in your game. (=16)
  - (8) Create a class ``GameTime``, that has an ``int hour`` as state, ranging from 0 to 23 (inclusive). Implement ``int getHour()`` and ``void increaseHour()`` and print out the hour like a 12 or 24-hour watch. Do not change your ``hour`` field in your ***getter*** method.
