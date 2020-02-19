@@ -56,7 +56,7 @@ When you visit a place for the second time, print out a message indicating to th
 
 # Challenges:
 
-Remember that SpookyMansion will be due ***Due Date***: February 27, 2019.
+Remember that SpookyMansion will be due ***Due Date***: February 27, 2020.
 
 Remember that we will have a new assignment opening on the next day, so don't save it until the last minute!
 
