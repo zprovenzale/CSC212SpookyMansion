@@ -104,11 +104,11 @@ What does this look like? Consider this example: [SecretExit.md](SecretExit.md)
  
 ### Implement Stuff (=20)
 What does this look like? Consider part of this example: [LockedExit.md](LockedExit.md)
+ - (4) The player can no longer be represented by just a location. They need to know what key(s) if any they have.
+ - (4) Make a ``stuff`` command that prints out the users items or "You have nothing."
  - (4) Place must have a method that returns a list of items in a location (maybe just ``List<String>``; don't need an item class)
  - (4) There must be an action to ``take`` an item.
  - (4) Items are part of the description until they are taken from a ``Place``. See the ``getDescription`` method. It might be easier to create a new ``void printDescription()``
- - (4) The player can no longer be represented by just a location. They need to know what key(s) if any they have.
- - (4) Make a ``stuff`` command that prints out the users items or "You have nothing."
  
 ### LockedExit / Requires Stuff: (=4..20 points; very similar to SecretExit)
 What does this look like? Consider this example: [LockedExit.md](LockedExit.md)
