@@ -19,3 +19,4 @@ public interface GameWorld {
 	 */
 	Place getPlace(String id);
 }
+

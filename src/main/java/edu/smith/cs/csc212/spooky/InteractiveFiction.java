@@ -30,7 +30,12 @@ public class InteractiveFiction {
 			
 			System.out.println();
 			System.out.println("... --- ...");
+			if(player.hasBeenHereBefore()) {
+				System.out.println("This place feels familiar...");
+			}
 			System.out.println(here.getDescription());
+			
+			player.rememberThisPlace();
 
 			// Game over after print!
 			if (here.isTerminalState()) {
@@ -65,29 +70,78 @@ public class InteractiveFiction {
 					continue;
 				}
 			}
-
-			// From here on out, what they typed better be a number!
-			Integer exitNum = null;
-			try {
-				exitNum = Integer.parseInt(action);
-			} catch (NumberFormatException nfe) {
-				System.out.println("That's not something I understand! Try a number!");
-				continue;
+			
+			//stop game
+			if (action.equals("escape") || action.equals("q")) {
+				break;
+			}
+			
+			//give a list of stuff
+			
+			if (action.equals("stuff")) {
+				if(player.getStuff().size() > 0) {
+					System.out.println(player.getStuff());
+				} else {
+					System.out.println("You have no stuff");
+				}
+			}
+			
+			if (action.equals("take")) {
+				if (here.getStuff() != null) {
+					player.addStuff(here.getStuff());
+				} else {
+					System.out.println("There is no list of Stuff!");
+				}
+			}
+			
+			if (player.getStuff().contains("Marauders Map")) {
+				if (action.equals("search")) {
+					here.search();
+				}
+			}
+			
+			if (player.getStuff().contains("Broomstick")) {
+				here.hasBroom();
+			}
+			
+			if (action.equals("alohomora")) {
+				here.unlock();
+			}
+			
+			if (action.equals("help")) {
+				System.out.println("Enter 'escape' or 'q' or 'quit' to stop the game.\n"
+						+ "Enter 'stuff' to see a list of your stuff."
+						+ "Enter 'take' to take stuff from a place");
 			}
 
-			if (exitNum < 0 || exitNum >= exits.size()) {
-				System.out.println("I don't know what to do with that number!");
-				continue;
-			}
+			// From here on out, what they typed better be a number or a command!
+			if (action.equals("help") == false && action.equals("stuff") == false
+					&& action.equals("take") == false && action.equals("search") == false
+					&& action.equals("alohomora") == false) {
 
-			// Move to the room they indicated.
-			Exit destination = exits.get(exitNum);
-			if (destination.canOpen(player)) {
-				player.moveTo(destination.getTarget());
-			} else {
-				// TODO: some kind of message about it being locked?
+				Integer exitNum = null;
+				try {
+					exitNum = Integer.parseInt(action);
+				} catch (NumberFormatException nfe) {
+					System.out.println("That's not something I understand! Try a number!");
+					continue;
+				}
+	
+				if (exitNum < 0 || exitNum >= exits.size()) {
+					System.out.println("I don't know what to do with that number!");
+					continue;
+				}
+	
+				// Move to the room they indicated.
+				Exit destination = exits.get(exitNum);
+				if (destination.canOpen(player)) {
+					player.moveTo(destination.getTarget());
+				} else {
+					System.out.println("You can't use this exit! if there is a door you need to unlock it\n"
+							+ "with a spell, if there's not you need a broom in order to fly!");
+				}
+				}
 			}
-		}
 
 		return player.getPlace();
 	}
@@ -101,7 +155,8 @@ public class InteractiveFiction {
 		TextInput input = TextInput.fromArgs(args);
 
 		// This is the game we're playing.
-		GameWorld game = new SpookyMansion();
+		//HI REMEMBER ME IM IMPORTANT
+		GameWorld game = new Hogwarts();
 
 		// Actually play the game.
 		runGame(input, game);

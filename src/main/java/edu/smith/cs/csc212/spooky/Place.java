@@ -13,7 +13,11 @@ public class Place {
 	/**
 	 * This is a list of places we can get to from this place.
 	 */
-	private List<Exit> exits;
+	private List<Exit> exits;	
+	/**
+	 * This is a list of stuff this place has
+	 */
+	private List<String> stuff;
 	/**
 	 * This is the identifier of the place.
 	 */
@@ -37,6 +41,7 @@ public class Place {
 		this.id = id;
 		this.description = description;
 		this.exits = new ArrayList<>();
+		this.stuff = new ArrayList<>();
 		this.terminal = terminal;
 	}
 	
@@ -49,11 +54,68 @@ public class Place {
 	}
 	
 	/**
+	 * creates an exit for the user to navigate to another Place, but secret
+	 * @param secretExit - the description and target of the other Place
+	 */
+	public void addSecretExit(SecretExit secretExit) {
+		this.exits.add(secretExit);		
+	}
+	
+	/**
+	 * creates an exit for the user to navigate to another Place, but locked
+	 * @param lockedExit - the description and target of the other Place
+	 */
+	public void addLockedExit(LockedExit lockedExit) {
+		this.exits.add(lockedExit);
+	}
+	
+	public void addFlyExit(FlyExit flyExit) {
+		this.exits.add(flyExit);
+	}
+
+	public void search() {
+		for(Exit exit:exits) {
+			exit.search();
+		}
+	}
+	
+	public void unlock() {
+		for(Exit exit:exits) {
+			exit.unlock();
+		}
+	}
+	
+	public void hasBroom() {
+		for(Exit exit:exits) {
+			exit.hasBroom();
+		}
+	}
+	
+	/**
 	 * For gameplay, whether this place ends the game.
 	 * @return true if this is the end.
 	 */
 	public boolean isTerminalState() {
 		return this.terminal;
+	}
+	
+	/**
+	 * get a list of stuff at this place
+	 */
+	
+	public List<String> getStuff() {
+		return this.stuff;	
+	}
+	
+	/**
+	 * Add an item to the list of stuff
+	 */
+	public void addStuff(String e) {
+		stuff.add(e);
+	}
+	
+	public void removeStuff(Object o) {
+		stuff.remove(o);
 	}
 	
 	/**
